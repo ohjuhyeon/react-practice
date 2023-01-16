@@ -1,0 +1,41 @@
+[동적인 UI 만드는 STEP]
+1. html css로 미리 디자인 완성
+
+function Modal() {
+  return (
+    <div className='modal'>
+      <h4>제목</h4>
+      <p>날짜</p>
+      <p>상세내용</p>
+    </div>
+  );
+}
+
+2. UI의 현재 상태를 state에 저장
+
+  let [modal, setModal] = useState(false);
+
+3. state에 따라 UI가 어떻게 보일지 작성
+html문에서는 if문을 쓸수없기때문에 삼항 연산자를 통해 구현
+
+    {modal == true ? <Modal /> : null}
+
+      
+숙제: 글제목을 누르면 모달창이 열리고 닫혀야함
+
+    onClick={() => {
+        modal == true ? setModal(false) : setModal(true);
+        }}
+
+          내가 짠코드
+
+          이렇게 짜면 
+
+    onClick={ ()=>{ setModal(!modal) } }> {글제목[0]} </button>
+    { 
+       modal == true ? <Modal></Modal> : null
+    }
+      강의에서 짠 코드
+
+      온클릭 안에서 삼항연산자로 바꿔주면 안되는건가
+
